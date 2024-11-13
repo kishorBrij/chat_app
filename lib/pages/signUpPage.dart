@@ -24,23 +24,17 @@ class _SignUpPageState extends State<SignUpPage> {
     String confirmPassword = confirmPasswordController.text.trim();
 
     if (email == "" || password == "" || confirmPassword == "") {
-      UiHelper.showAlertDialog(context, "Incomplete data","Please fill all the field");
+      UiHelper.showAlertDialog(
+          context, "Incomplete data", "Please fill all the field");
       //showDialog(context: context, builder: (context){
-        // return const AlertDialog(
-        //   title: Text("please enter email and Password",
-        //     style: TextStyle(color: Colors.red,fontSize: 15),),
-        // );
-     // } );
+      // return const AlertDialog(
+      //   title: Text("please enter email and Password",
+      //     style: TextStyle(color: Colors.red,fontSize: 15),),
+      // );
+      // } );
     } else if (password != confirmPassword) {
       UiHelper.showAlertDialog(context, "Password Miss Match",
-      "The password you enter do not Match");
-
-      // showDialog(context: context, builder: (context){
-      //   return const AlertDialog(
-      //     title: Text("password and confirmPassword not match",
-      //       style: TextStyle(color: Colors.red,fontSize: 15),),
-      //   );
-      // });
+          "The password you enter do not Match");
     } else {
       signUp(email, password);
     }
@@ -54,10 +48,9 @@ class _SignUpPageState extends State<SignUpPage> {
       credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (ex) {
-
       Navigator.pop(context);
-      UiHelper.showAlertDialog(context,"An error occurred", "ex.code.toString()");
-
+      UiHelper.showAlertDialog(
+          context, "An error occurred", "ex.code.toString()");
     }
 
     if (credential != null) {
@@ -73,7 +66,6 @@ class _SignUpPageState extends State<SignUpPage> {
           .doc(uid)
           .set(newUser.toMap())
           .then((value) {
-
         Navigator.popUntil(context, (route) => route.isFirst);
         Navigator.pushReplacement(
             context,

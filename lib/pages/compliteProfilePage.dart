@@ -2,7 +2,6 @@
 
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:chat_app/model/uiHelper.dart';
 import 'package:chat_app/pages/home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

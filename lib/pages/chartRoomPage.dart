@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:chat_app/main.dart';
 import 'package:chat_app/model/chatRoomModel.dart';
@@ -66,7 +65,7 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
 
             const SizedBox(width: 10,),
 
-            Text(widget.targetUser.fullname.toString()),
+            SizedBox(child: Text(widget.targetUser.fullname.toString())),
           ],
         ),
       ),

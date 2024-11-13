@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:chat_app/main.dart';
 import 'package:chat_app/model/chatRoomModel.dart';
